@@ -1,0 +1,51 @@
+/*-------------------------------------------*\
+      #FE Nanodegree Project 1
+\*-------------------------------------------*/
+
+/**
+ * This file tries to follow the CSS GUIDELINES http://cssguidelin.es/
+ * and it uses an extended BEM syntax called BEMIT, for more information
+ * please refere to http://goo.gl/W0wWhh
+ *
+ * Thanks to Harry Roberts to share this amazing way to build good CSS :)
+ */
+
+/**
+ * BASE LEVEL STYLING
+ */
+@import "base.page";
+
+/**
+ * OBJECTS
+ */
+@import "objects.wrapper";
+
+/**
+ * COMPONENTS
+ */
+@import "components.page-head";
+@import "components.page-hero";
+@import "components.page-content";
+@import "components.featured-work";
+
+/**
+ * TRUMPS/UTILITIES
+ */
+@import "trumps.clearfix";
+
+
+/* PALM OR MOBILE */
+@media screen and (max-width: 44.9375em) {}
+
+/* LAPTOP */
+@media screen and (min-width: 45em) and (max-width: 63.9375em) {}
+
+/* LAPTOP-AND-UP */
+@media screen and (min-width: 45em) {}
+
+/* PORTABLE */
+@media screen and (max-width: 63.9375em) {}
+
+/* DESKTOP */
+@media screen and (min-width: 64em) {}
+

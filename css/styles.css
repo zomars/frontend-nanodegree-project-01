@@ -1,0 +1,177 @@
+/*-------------------------------------------*\
+      #FE Nanodegree Project 1
+\*-------------------------------------------*/
+/**
+ * This file tries to follow the CSS GUIDELINES http://cssguidelin.es/
+ * and it uses an extended BEM syntax called BEMIT, for more information
+ * please refere to http://goo.gl/W0wWhh
+ *
+ * Thanks to Harry Roberts to share this amazing way to build good CSS :)
+ */
+/**
+ * BASE LEVEL STYLING
+ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 44.9375em) {
+  html {
+    font-size: 12px;
+  }
+}
+body {
+  margin: 0;
+  font-family: "proxima-nova", "Proxima Nova", sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  color: #676857;
+}
+
+/**
+ * OBJECTS
+ */
+/* WRAPPER */
+.o-wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2%;
+}
+
+/**
+ * COMPONENTS
+ */
+/* HEADING */
+.c-page-head {
+  width: 100%;
+}
+
+.c-page-head__content {
+  height: 100%;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  border-bottom: 4px solid #bcbbbb;
+}
+
+.c-page-head__logo {
+  float: left;
+  width: 80px;
+  max-height: 100%;
+}
+
+.c-page-head__title {
+  float: right;
+  width: calc(100% - 80px);
+  font-size: 2.6875rem;
+  font-weight: 100;
+  text-align: right;
+  -webkit-margin-before: 0;
+  -webkit-margin-after: 0;
+}
+
+.c-page-head__subtitle {
+  float: right;
+  width: calc(100% - 80px);
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 100;
+  text-align: right;
+}
+
+/* PAGE HERO */
+.c-page-hero {
+  max-width: 100%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.c-page-hero__image {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto 10px;
+}
+
+/* PAGE CONTENT */
+.c-page-content {
+  margin-bottom: 1.5rem;
+}
+
+.c-page-content__title {
+  max-width: 100%;
+  margin: 0;
+  margin-bottom: 1.5rem;
+  font-size: 1.625rem;
+  letter-spacing: 0.05em;
+  color: #bcbbbb;
+}
+
+/* FEATURED WORK */
+.c-featured-work {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-left: -1.5rem;
+  text-align: center;
+}
+
+.c-featured-work__item {
+  width: 33.33%;
+  float: left;
+  padding-left: 1.5rem;
+  display: block;
+}
+
+.c-featured-work__thumb {
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.c-featured-work__title {
+  margin: 0.5rem 0;
+  font-weight: 100;
+  text-transform: uppercase;
+  font-size: 1.6875rem;
+  letter-spacing: 0.05em;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .c-featured-work__title {
+    font-size: 1.3rem;
+  }
+}
+.c-featured-work__link {
+  margin: 0;
+  font-weight: 100;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: inherit;
+  text-decoration: none;
+}
+.c-featured-work__link:active, .c-featured-work__link:focus, .c-featured-work__link:hover {
+  text-decoration: underline;
+}
+
+/**
+ * TRUMPS/UTILITIES
+ */
+/* CLEARFIX */
+/**
+ * Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
+ */
+.u-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* PALM OR MOBILE */
+/* LAPTOP */
+/* LAPTOP-AND-UP */
+/* PORTABLE */
+/* DESKTOP */

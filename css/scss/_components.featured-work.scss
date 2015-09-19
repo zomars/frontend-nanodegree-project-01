@@ -1,0 +1,52 @@
+/* FEATURED WORK */
+
+.c-featured-work {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: -1.5rem;
+    text-align: center;
+}
+
+    .c-featured-work__item {
+        width: 33.33%;
+        float: left;
+        padding-left: 1.5rem;
+        display: block;
+    }
+
+        .c-featured-work__thumb {
+            max-width: 100%;
+            vertical-align: middle;
+        }
+
+        .c-featured-work__title {
+            margin: 0.5rem 0;
+            font-weight: 100;
+            text-transform: uppercase;
+            font-size: 1.6875rem;
+            letter-spacing: 0.05em;
+        }
+
+            @media screen and (max-width: 44.9375em) {
+                .c-featured-work__title {
+                    font-size: 1.3rem;
+                }
+            }
+
+        .c-featured-work__link {
+            margin: 0;
+            font-weight: 100;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            color: inherit;
+            text-decoration: none;
+
+            &:active,
+            &:focus,
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+

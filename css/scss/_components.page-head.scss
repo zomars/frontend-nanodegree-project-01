@@ -1,0 +1,42 @@
+/* HEADING */
+
+.c-page-head {
+    width: 100%;
+}
+
+    .c-page-head__content {
+        height: 100%;
+        padding-top: 1.5em;
+        padding-bottom: 1.5em;
+        text-transform: uppercase;
+        line-height: 1.2;
+        border-bottom: 4px solid #bcbbbb;
+    }
+
+        .c-page-head__logo {
+            float: left;
+            width: 80px;
+            max-height: 100%;
+        }
+
+        .c-page-head__title {
+            float: right;
+            width: calc(100% - 80px);
+            font-size: 2.6875rem;
+            font-weight: 100;
+            text-align: right;
+
+            -webkit-margin-before: 0;
+            -webkit-margin-after: 0;
+        }
+
+        .c-page-head__subtitle {
+            float: right;
+            width: calc(100% - 80px);
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 100;
+            text-align: right;
+        }
+
+
