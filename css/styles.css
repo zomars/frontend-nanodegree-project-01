@@ -9,9 +9,43 @@
  * Thanks to Harry Roberts to share this amazing way to build good CSS :)
  */
 /**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Responsive...............Predefined media queries
+ *
+ * TOOLS
+ * Responsive...............Custom media queries mixin
+ *
+ * BASE
+ * Page.....................Page-level styles (HTML element)
+ *
+ * OBJECTS
+ * Wrappers.................Wrappers and page constraints
+ * Grid.....................Solvedbyflexbox's modded grid system
+ *
+ * COMPONENTS
+ * Page Head................Page header styling
+ * Page Hero................Page hero styling
+ * Page Content.............Page main content styling
+ * Featured Work............Featured work showcase styling
+ *
+ * TRUMPS
+ * Clearfix.................inuitcss' clearfix for floats
+ */
+/**
+ * SETTINGS
+ */
+/* SETTINGS-RESPONSIVE */
+/**
+ * TOOLS
+ */
+/**
  * BASE LEVEL STYLING
  */
 * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -42,6 +76,383 @@ body {
   padding: 0 2%;
 }
 
+/**
+ * GRID
+ * Based on the Solved By Flexbox grid:
+ * https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+ */
+/* The Grid object and modifiers */
+.o-grid {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.o-grid--flexCells > .o-grid__cell {
+  display: flex;
+}
+
+/* Grid alignment */
+.o-grid--top {
+  align-items: flex-start;
+}
+
+.o-grid--bottom {
+  align-items: flex-end;
+}
+
+.o-grid--center {
+  align-items: center;
+}
+
+.o-grid--justifyCenter {
+  justify-content: center;
+}
+
+/* Grid widths */
+.o-grid--fit > .o-grid__cell {
+  flex: 1;
+}
+
+.o-grid--full > .o-grid__cell {
+  flex: 0 0 100%;
+}
+
+.o-grid--1-of-2 > .o-grid__cell {
+  flex: 0 0 50%;
+}
+
+.o-grid--1-of-3 > .o-grid__cell {
+  flex: 0 0 33.3333%;
+}
+
+.o-grid--1-of-4 > .o-grid__cell {
+  flex: 0 0 25%;
+}
+
+/* Grid gutters */
+.o-grid--gutters {
+  margin: -1rem 0 1rem -1rem;
+}
+
+.o-grid--gutters > .o-grid__cell {
+  padding: 1rem 0 0 1rem;
+}
+
+.o-grid--gutters-large {
+  margin: -1.5rem 0 1.5rem -1.5rem;
+}
+.o-grid--gutters-large > .o-grid__cell {
+  padding: 1.5rem 0 0 1.5rem;
+}
+
+.o-grid--gutters-huge {
+  margin: -2rem 0 2rem -2rem;
+}
+.o-grid--gutters-huge > .o-grid__cell {
+  padding: 2rem 0 0 2rem;
+}
+
+/* Grid cell and modifiers */
+.o-grid__cell {
+  flex: 1;
+}
+
+.o-grid__cell--top {
+  align-self: flex-start;
+}
+
+.o-grid__cell--bottom {
+  align-self: flex-end;
+}
+
+.o-grid__cell--center {
+  align-self: center;
+}
+
+.o-grid__cell--autoSize {
+  flex: none;
+}
+
+/**
+ * RESPONSIVE GRID
+ * Based on the Solved By Flexbox grid:
+ * https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+ * And on Harry Roberts' inuitcss resposive tools:
+ * https://github.com/inuitcss/tools.responsive
+ */
+@media screen and (max-width: 44.9375em) {
+  .o-grid--fit\@palm > .o-grid__cell {
+    flex: 1;
+  }
+
+  .o-grid--full\@palm > .o-grid__cell {
+    flex: 0 0 100%;
+  }
+
+  .o-grid--1-of-2\@palm > .o-grid__cell {
+    flex: 0 0 50%;
+  }
+
+  .o-grid--1-of-3\@palm > .o-grid__cell {
+    flex: 0 0 33.3333%;
+  }
+
+  .o-grid--1-of-4\@palm > .o-grid__cell {
+    flex: 0 0 25%;
+  }
+
+  .o-grid--gutters\@palm {
+    margin: -1rem 0 1rem -1rem;
+  }
+
+  .o-grid--gutters\@palm > .o-grid__cell {
+    padding: 1rem 0 0 1rem;
+  }
+
+  .o-grid--gutters-large\@palm {
+    margin: -1.5rem 0 1.5rem -1.5rem;
+  }
+
+  .o-grid--gutters-large\@palm > .o-grid__cell {
+    padding: 1.5rem 0 0 1.5rem;
+  }
+
+  .o-grid--gutters-huge\@palm {
+    margin: -2rem 0 2rem -2rem;
+  }
+
+  .o-grid--gutters-huge\@palm > .o-grid__cell {
+    padding: 2rem 0 0 2rem;
+  }
+}
+@media screen and (min-width: 45em) and (max-width: 63.9375em) {
+  .o-grid--fit\@lap > .o-grid__cell {
+    flex: 1;
+  }
+
+  .o-grid--full\@lap > .o-grid__cell {
+    flex: 0 0 100%;
+  }
+
+  .o-grid--1-of-2\@lap > .o-grid__cell {
+    flex: 0 0 50%;
+  }
+
+  .o-grid--1-of-3\@lap > .o-grid__cell {
+    flex: 0 0 33.3333%;
+  }
+
+  .o-grid--1-of-4\@lap > .o-grid__cell {
+    flex: 0 0 25%;
+  }
+
+  .o-grid--gutters\@lap {
+    margin: -1rem 0 1rem -1rem;
+  }
+
+  .o-grid--gutters\@lap > .o-grid__cell {
+    padding: 1rem 0 0 1rem;
+  }
+
+  .o-grid--gutters-large\@lap {
+    margin: -1.5rem 0 1.5rem -1.5rem;
+  }
+
+  .o-grid--gutters-large\@lap > .o-grid__cell {
+    padding: 1.5rem 0 0 1.5rem;
+  }
+
+  .o-grid--gutters-huge\@lap {
+    margin: -2rem 0 2rem -2rem;
+  }
+
+  .o-grid--gutters-huge\@lap > .o-grid__cell {
+    padding: 2rem 0 0 2rem;
+  }
+}
+@media screen and (min-width: 45em) {
+  .o-grid--fit\@lap-and-up > .o-grid__cell {
+    flex: 1;
+  }
+
+  .o-grid--full\@lap-and-up > .o-grid__cell {
+    flex: 0 0 100%;
+  }
+
+  .o-grid--1-of-2\@lap-and-up > .o-grid__cell {
+    flex: 0 0 50%;
+  }
+
+  .o-grid--1-of-3\@lap-and-up > .o-grid__cell {
+    flex: 0 0 33.3333%;
+  }
+
+  .o-grid--1-of-4\@lap-and-up > .o-grid__cell {
+    flex: 0 0 25%;
+  }
+
+  .o-grid--gutters\@lap-and-up {
+    margin: -1rem 0 1rem -1rem;
+  }
+
+  .o-grid--gutters\@lap-and-up > .o-grid__cell {
+    padding: 1rem 0 0 1rem;
+  }
+
+  .o-grid--gutters-large\@lap-and-up {
+    margin: -1.5rem 0 1.5rem -1.5rem;
+  }
+
+  .o-grid--gutters-large\@lap-and-up > .o-grid__cell {
+    padding: 1.5rem 0 0 1.5rem;
+  }
+
+  .o-grid--gutters-huge\@lap-and-up {
+    margin: -2rem 0 2rem -2rem;
+  }
+
+  .o-grid--gutters-huge\@lap-and-up > .o-grid__cell {
+    padding: 2rem 0 0 2rem;
+  }
+}
+@media screen and (max-width: 63.9375em) {
+  .o-grid--fit\@portable > .o-grid__cell {
+    flex: 1;
+  }
+
+  .o-grid--full\@portable > .o-grid__cell {
+    flex: 0 0 100%;
+  }
+
+  .o-grid--1-of-2\@portable > .o-grid__cell {
+    flex: 0 0 50%;
+  }
+
+  .o-grid--1-of-3\@portable > .o-grid__cell {
+    flex: 0 0 33.3333%;
+  }
+
+  .o-grid--1-of-4\@portable > .o-grid__cell {
+    flex: 0 0 25%;
+  }
+
+  .o-grid--gutters\@portable {
+    margin: -1rem 0 1rem -1rem;
+  }
+
+  .o-grid--gutters\@portable > .o-grid__cell {
+    padding: 1rem 0 0 1rem;
+  }
+
+  .o-grid--gutters-large\@portable {
+    margin: -1.5rem 0 1.5rem -1.5rem;
+  }
+
+  .o-grid--gutters-large\@portable > .o-grid__cell {
+    padding: 1.5rem 0 0 1.5rem;
+  }
+
+  .o-grid--gutters-huge\@portable {
+    margin: -2rem 0 2rem -2rem;
+  }
+
+  .o-grid--gutters-huge\@portable > .o-grid__cell {
+    padding: 2rem 0 0 2rem;
+  }
+}
+@media screen and (min-width: 64em) {
+  .o-grid--fit\@desk > .o-grid__cell {
+    flex: 1;
+  }
+
+  .o-grid--full\@desk > .o-grid__cell {
+    flex: 0 0 100%;
+  }
+
+  .o-grid--1-of-2\@desk > .o-grid__cell {
+    flex: 0 0 50%;
+  }
+
+  .o-grid--1-of-3\@desk > .o-grid__cell {
+    flex: 0 0 33.3333%;
+  }
+
+  .o-grid--1-of-4\@desk > .o-grid__cell {
+    flex: 0 0 25%;
+  }
+
+  .o-grid--gutters\@desk {
+    margin: -1rem 0 1rem -1rem;
+  }
+
+  .o-grid--gutters\@desk > .o-grid__cell {
+    padding: 1rem 0 0 1rem;
+  }
+
+  .o-grid--gutters-large\@desk {
+    margin: -1.5rem 0 1.5rem -1.5rem;
+  }
+
+  .o-grid--gutters-large\@desk > .o-grid__cell {
+    padding: 1.5rem 0 0 1.5rem;
+  }
+
+  .o-grid--gutters-huge\@desk {
+    margin: -2rem 0 2rem -2rem;
+  }
+
+  .o-grid--gutters-huge\@desk > .o-grid__cell {
+    padding: 2rem 0 0 2rem;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+  .o-grid--fit\@retina > .o-grid__cell {
+    flex: 1;
+  }
+
+  .o-grid--full\@retina > .o-grid__cell {
+    flex: 0 0 100%;
+  }
+
+  .o-grid--1-of-2\@retina > .o-grid__cell {
+    flex: 0 0 50%;
+  }
+
+  .o-grid--1-of-3\@retina > .o-grid__cell {
+    flex: 0 0 33.3333%;
+  }
+
+  .o-grid--1-of-4\@retina > .o-grid__cell {
+    flex: 0 0 25%;
+  }
+
+  .o-grid--gutters\@retina {
+    margin: -1rem 0 1rem -1rem;
+  }
+
+  .o-grid--gutters\@retina > .o-grid__cell {
+    padding: 1rem 0 0 1rem;
+  }
+
+  .o-grid--gutters-large\@retina {
+    margin: -1.5rem 0 1.5rem -1.5rem;
+  }
+
+  .o-grid--gutters-large\@retina > .o-grid__cell {
+    padding: 1.5rem 0 0 1.5rem;
+  }
+
+  .o-grid--gutters-huge\@retina {
+    margin: -2rem 0 2rem -2rem;
+  }
+
+  .o-grid--gutters-huge\@retina > .o-grid__cell {
+    padding: 2rem 0 0 2rem;
+  }
+}
 /**
  * COMPONENTS
  */
@@ -114,20 +525,11 @@ body {
 /* FEATURED WORK */
 .c-featured-work {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-left: -1.5rem;
   text-align: center;
 }
 
-.c-featured-work__item {
-  width: 33.33%;
-  float: left;
-  padding-left: 1.5rem;
-  display: block;
-}
-
 .c-featured-work__thumb {
+  width: 100%;
   max-width: 100%;
   vertical-align: middle;
 }
@@ -140,11 +542,6 @@ body {
   letter-spacing: 0.05em;
 }
 
-@media screen and (max-width: 44.9375em) {
-  .c-featured-work__title {
-    font-size: 1.3rem;
-  }
-}
 .c-featured-work__link {
   margin: 0;
   font-weight: 100;
@@ -153,7 +550,9 @@ body {
   color: inherit;
   text-decoration: none;
 }
-.c-featured-work__link:active, .c-featured-work__link:focus, .c-featured-work__link:hover {
+.c-featured-work__link:active,
+.c-featured-work__link:focus,
+.c-featured-work__link:hover {
   text-decoration: underline;
 }
 
@@ -170,8 +569,4 @@ body {
   clear: both;
 }
 
-/* PALM OR MOBILE */
-/* LAPTOP */
-/* LAPTOP-AND-UP */
-/* PORTABLE */
-/* DESKTOP */
+/*# sourceMappingURL=styles.css.map */

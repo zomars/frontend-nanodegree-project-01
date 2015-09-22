@@ -1,0 +1,106 @@
+/**
+ * GRID
+ * Based on the Solved By Flexbox grid:
+ * https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+ */
+
+/* The Grid object and modifiers */
+.o-grid {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+    .o-grid--flexCells > .o-grid__cell {
+        display: flex;
+    }
+
+    /* Grid alignment */
+
+    .o-grid--top {
+        align-items: flex-start;
+    }
+
+    .o-grid--bottom {
+        align-items: flex-end;
+    }
+
+    .o-grid--center {
+        align-items: center;
+    }
+
+    .o-grid--justifyCenter {
+        justify-content: center;
+    }
+
+    /* Grid widths */
+
+    .o-grid--fit > .o-grid__cell {
+        flex: 1;
+    }
+
+    .o-grid--full > .o-grid__cell {
+        flex: 0 0 100%;
+    }
+
+    .o-grid--1-of-2 > .o-grid__cell {
+        flex: 0 0 50%;
+    }
+
+    .o-grid--1-of-3 > .o-grid__cell {
+        flex: 0 0 33.3333%;
+    }
+
+    .o-grid--1-of-4 > .o-grid__cell {
+        flex: 0 0 25%;
+    }
+
+    /* Grid gutters */
+
+    .o-grid--gutters {
+        margin: -1rem 0 1rem -1rem;
+    }
+    .o-grid--gutters > .o-grid__cell {
+        padding: 1rem 0 0 1rem;
+    }
+
+    .o-grid--gutters-large {
+        margin: -1.5rem 0 1.5rem -1.5rem;
+
+        & > .o-grid__cell {
+            padding: 1.5rem 0 0 1.5rem;
+        }
+    }
+
+    .o-grid--gutters-huge {
+        margin: -2rem 0 2rem -2rem;
+
+        & > .o-grid__cell {
+            padding: 2rem 0 0 2rem;
+        }
+    }
+
+    /* Grid cell and modifiers */
+
+    .o-grid__cell {
+        flex: 1;
+    }
+
+        .o-grid__cell--top {
+            align-self: flex-start;
+        }
+
+        .o-grid__cell--bottom {
+            align-self: flex-end;
+        }
+
+        .o-grid__cell--center {
+            align-self: center;
+        }
+
+        .o-grid__cell--autoSize {
+            flex: none;
+        }
+

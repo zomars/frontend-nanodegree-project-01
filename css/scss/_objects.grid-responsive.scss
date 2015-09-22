@@ -1,0 +1,68 @@
+/**
+ * RESPONSIVE GRID
+ * Based on the Solved By Flexbox grid:
+ * https://philipwalton.github.io/solved-by-flexbox/demos/grids/
+ * And on Harry Roberts' inuitcss resposive tools:
+ * https://github.com/inuitcss/tools.responsive
+ */
+
+ // Here we set a variable assuming that responsive settings are not set
+ // globally. If they have been previously been defined, the following variable
+ // will be overriden and will be set to `true`.
+ $inuit-responsive-settings: false !default;
+
+ @if ($inuit-responsive-settings == false) {
+     @warn "Oops! Have you included a responsive settings file?"
+ }
+
+// Loop through the list of breakpoints we’ve provided in our settings file.
+@each $breakpoint in $breakpoints {
+
+    // Grab the alias and the condition from their respective locations in
+    // the list.
+    $alias:     nth($breakpoint, 1);
+    $condition: nth($breakpoint, 2);
+
+    // ...tell the mixin that we’ve found it...
+    $breakpoint-found: true;
+
+    // ...and spit it out here.
+    @media #{$condition} {
+        // Responsive widths
+        .o-grid--fit\@#{$alias} > .o-grid__cell {
+            flex: 1;
+        }
+        .o-grid--full\@#{$alias} > .o-grid__cell {
+            flex: 0 0 100%;
+        }
+        .o-grid--1-of-2\@#{$alias} > .o-grid__cell {
+            flex: 0 0 50%;
+        }
+        .o-grid--1-of-3\@#{$alias} > .o-grid__cell {
+            flex: 0 0 33.3333%;
+        }
+        .o-grid--1-of-4\@#{$alias} > .o-grid__cell {
+            flex: 0 0 25%;
+        }
+        // Responsive gutters
+        .o-grid--gutters\@#{$alias} {
+            margin: -1rem 0 1rem -1rem;
+        }
+        .o-grid--gutters\@#{$alias} > .o-grid__cell {
+            padding: 1rem 0 0 1rem;
+        }
+        .o-grid--gutters-large\@#{$alias} {
+            margin: -1.5rem 0 1.5rem -1.5rem;
+        }
+        .o-grid--gutters-large\@#{$alias} > .o-grid__cell {
+            padding: 1.5rem 0 0 1.5rem;
+        }
+        .o-grid--gutters-huge\@#{$alias} {
+            margin: -2rem 0 2rem -2rem;
+        }
+        .o-grid--gutters-huge\@#{$alias} > .o-grid__cell {
+            padding: 2rem 0 0 2rem;
+        }
+    }
+
+}

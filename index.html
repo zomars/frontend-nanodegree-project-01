@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/styles.css">
     </head>
     <body>
+        <!--Row for logo and name-->
         <main class="c-page-main">
             <header class="c-page-head u-clearfix">
                 <div class="o-wrapper">
@@ -17,26 +18,28 @@
                     </div>
                 </div>
             </header>
+            <!--Row for banner-->
             <section class="c-page-hero">
                 <div class="o-wrapper">
                     <img class="c-page-hero__image" src="img/hero_image.jpg" srcset="img/hero_image@2x.jpg 2x" alt="This is a picture of my workspace">
                 </div>
             </section>
-            <section class="c-page-content about-me ">
+            <!--Row for featured work-->
+            <section class="c-page-content">
                 <div class="o-wrapper">
                     <p class="c-page-content__title">Featured Work</p>
-                    <ul class="c-featured-work u-clearfix">
-                        <li class="c-featured-work__item">
+                    <ul class="o-grid o-grid--1-of-3 o-grid--gutters o-grid--full@palm c-featured-work">
+                        <li class="o-grid__cell c-featured-work__item">
                             <img class="c-featured-work__thumb" src="img/project_image_01.jpg" alt="Project thumbnail">
                             <h3 class="c-featured-work__title">Cáritas Culiacán</h3>
                             <a class="c-featured-work__link" href="http://caritasculiacan.anclastudio.com" title="Visit Caritas Culiacan website">http://caritasculiacan.anclastudio.com</a>
                         </li>
-                        <li class="c-featured-work__item">
+                        <li class="o-grid__cell c-featured-work__item">
                             <img class="c-featured-work__thumb" src="img/project_image_02.jpg" alt="Project thumbnail">
                             <h3 class="c-featured-work__title">Los Arcos Restaurant</h3>
                             <a class="c-featured-work__link" href="http://restaurantlosarcos.com" title="Visit Caritas Culiacan website">http://restaurantlosarcos.com</a>
                         </li>
-                        <li class="c-featured-work__item">
+                        <li class="o-grid__cell c-featured-work__item">
                             <img class="c-featured-work__thumb" src="img/project_image_03.jpg" alt="Project thumbnail">
                             <h3 class="c-featured-work__title">Sinuhé Manjarrez</h3>
                             <a class="c-featured-work__link" href="http://sinuhemanjarrez.com" title="Visit Caritas Culiacan website">http://sinuhemanjarrez.com</a>
@@ -46,19 +49,6 @@
             </section>
         </main>
         <!-- Added Proxima Nova from Adobe Typekit as an alternative to the Gotham font -->
-        <script type="text/javascript">
-            WebFontConfig = {
-                typekit: { id: 'sgq1nie' }
-            };
-            (function() {
-                var wf = document.createElement('script');
-                wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-                wf.type = 'text/javascript';
-                wf.async = 'true';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(wf, s);
-            })();
-        </script>
+        <script type="text/javascript" src="js/app.js"></script>
     </body>
 </html>

@@ -11,6 +11,42 @@
  */
 
 /**
+ * CONTENTS
+ *
+ * SETTINGS
+ * Responsive...............Predefined media queries
+ *
+ * TOOLS
+ * Responsive...............Custom media queries mixin
+ *
+ * BASE
+ * Page.....................Page-level styles (HTML element)
+ *
+ * OBJECTS
+ * Wrappers.................Wrappers and page constraints
+ * Grid.....................Solvedbyflexbox's modded grid system
+ *
+ * COMPONENTS
+ * Page Head................Page header styling
+ * Page Hero................Page hero styling
+ * Page Content.............Page main content styling
+ * Featured Work............Featured work showcase styling
+ *
+ * TRUMPS
+ * Clearfix.................inuitcss' clearfix for floats
+ */
+
+/**
+ * SETTINGS
+ */
+@import "settings.responsive";
+
+/**
+ * TOOLS
+ */
+@import "tools.responsive";
+
+/**
  * BASE LEVEL STYLING
  */
 @import "base.page";
@@ -19,6 +55,8 @@
  * OBJECTS
  */
 @import "objects.wrapper";
+@import "objects.grid";
+@import "objects.grid-responsive";
 
 /**
  * COMPONENTS
@@ -33,19 +71,4 @@
  */
 @import "trumps.clearfix";
 
-
-/* PALM OR MOBILE */
-@media screen and (max-width: 44.9375em) {}
-
-/* LAPTOP */
-@media screen and (min-width: 45em) and (max-width: 63.9375em) {}
-
-/* LAPTOP-AND-UP */
-@media screen and (min-width: 45em) {}
-
-/* PORTABLE */
-@media screen and (max-width: 63.9375em) {}
-
-/* DESKTOP */
-@media screen and (min-width: 64em) {}
 
